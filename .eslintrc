@@ -2,7 +2,7 @@
   "extends": "airbnb-base/legacy",
   "globals": {
     "Pinboard": true,
-    "chrome": true
+    "browser": true
   },
   "rules": {
     "func-names": "off",

@@ -2,8 +2,8 @@
   "name": "pinboard-pro",
   "version": "1.2.0",
   "private": true,
-  "description": "Google Chrome extension for Pinboard.in (https://pinboard.in).",
-  "author": "Richard Käll <richard.kall@me.com>",
+  "description": "Firefox extension for Pinboard.in (https://pinboard.in).",
+  "author": "Fork by José María Martín Luque <jmmartinluque@gmail.com>, original by Richard Käll <richard.kall@me.com>",
   "scripts": {
     "build": "gulp",
     "lint": "eslint . --ignore-path .gitignore",

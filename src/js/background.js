@@ -1,4 +1,4 @@
-chrome.commands.onCommand.addListener(function (command) {
+browser.commands.onCommand.addListener(function (command) {
   switch (command) {
     case 'save':
       Pinboard.save();

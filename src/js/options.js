@@ -1,5 +1,6 @@
 function restoreOptions() {
-  chrome.storage.sync.get({ visibleItems: true }, function (options) {
+  var getOptions = browser.storage.sync.get({ visibleItems: true });
+  getOptions.then(function (options) {
     var key;
     for (key in options.visibleItems) {
       if (options.visibleItems.hasOwnProperty(key)) {
@@ -19,13 +20,15 @@ function updateStatus() {
 
 function saveOptions() {
   var visibleItems = {};
+  var setOptions;
   var items = ['all', 'random', 'readLater', 'save', 'unread'];
 
   items.forEach(function (item) {
     visibleItems[item] = document.querySelector('.js-show-' + item).checked;
   });
 
-  chrome.storage.sync.set({ visibleItems: visibleItems }, updateStatus());
+  setOptions = browser.storage.sync.set({ visibleItems: visibleItems });
+  setOptions.then(updateStatus());
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);

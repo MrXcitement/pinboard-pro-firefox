@@ -1,10 +1,10 @@
 {
   "name": "Pinboard Pro",
-  "version": "",
+  "version": "1.2.0",
   "manifest_version": 2,
-  "description": "Google Chrome extension for Pinboard (https://pinboard.in).",
-  "author": "Richard Käll",
-  "homepage_url": "http://richardkall.se/google-chrome-extension-for-pinboard-in-pinboard-pro/",
+  "description": "Firefox add-on for Pinboard (https://pinboard.in).",
+  "author": "José María Martín Luque (fork), original from Richard Käll",
+  "homepage_url": "https://github.com/jmml97/pinboard-pro-firefox",
   "commands": {
     "save": {
       "suggested_key": {
@@ -58,9 +58,8 @@
   },
   "options_ui": {
     "page": "options.html",
-    "chrome_style": true
+    "browser_style": true
   },
-  "options_page": "options.html",
   "permissions": [
     "activeTab",
     "storage",

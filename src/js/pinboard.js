@@ -2,34 +2,51 @@ var BASE_URL = 'https://pinboard.in';
 
 var Pinboard = { // eslint-disable-line no-unused-vars
   all: function () {
-    chrome.tabs.create({ url: BASE_URL });
+    browser.tabs.create({ url: BASE_URL });
   },
   random: function () {
-    chrome.tabs.create({ url: BASE_URL + '/random/?type=unread' });
+    browser.tabs.create({ url: BASE_URL + '/random/?type=unread' });
   },
   readLater: function () {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var getTabs = browser.tabs.query({ active: true, currentWindow: true });
+    getTabs.then(function (tabs) {
       var tab = tabs[0];
       var url = BASE_URL
-        + '/add?later=yes&noui=yes&jump=close&url=' + encodeURIComponent(tab.url)
+        + '/add?jump=close&later=yes&noui=yes&jump=close&url=' + encodeURIComponent(tab.url)
         + '&title=' + encodeURIComponent(tab.title);
-      window.open(url, 'Pinboard', 'toolbar=no,scrollbars=no,width=50,height=50');
+      browser.windows.create({
+        allowScriptsToClose: true,
+        height: 550,
+        width: 700,
+        type: 'panel',
+        titlePreface: 'Pinboard',
+        url: url
+      });
     });
   },
   save: function () {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var getTabs = browser.tabs.query({ active: true, currentWindow: true });
+    getTabs.then(function (tabs) {
       var tab = tabs[0];
-      chrome.tabs.executeScript(tab.id, {
+      var selection = browser.tabs.executeScript(tab.id, {
         code: 'window.getSelection().toString();'
-      }, function (selection) {
-        var url = BASE_URL + '/add?showtags=yes&url=' + encodeURIComponent(tab.url)
+      });
+      selection.then(function (text) {
+        var url = BASE_URL + '/add?jump=close&showtags=yes&url=' + encodeURIComponent(tab.url)
           + '&title=' + encodeURIComponent(tab.title)
-          + '&description=' + encodeURIComponent(selection);
-        window.open(url, 'Pinboard', 'toolbar=no,scrollbars=no,width=700,height=550');
+          + '&description=' + encodeURIComponent(text);
+        browser.windows.create({
+          allowScriptsToClose: true,
+          height: 550,
+          width: 700,
+          type: 'panel',
+          titlePreface: 'Pinboard',
+          url: url
+        });
       });
     });
   },
   unread: function () {
-    chrome.tabs.create({ url: BASE_URL + '/toread/' });
+    browser.tabs.create({ url: BASE_URL + '/toread/' });
   }
 };
