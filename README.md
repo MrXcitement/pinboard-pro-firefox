@@ -1,4 +1,4 @@
-# Pinboard Pro [![Build Status](https://travis-ci.org/richardkall/pinboard-pro-chrome-extension.svg?branch=master)](https://travis-ci.org/richardkall/pinboard-pro-chrome-extension)
+# Pinboard Pro [![Build Status](https://travis-ci.org/jmml97/pinboard-pro-firefox.svg?branch=master)](https://travis-ci.org/jmml97/pinboard-pro-firefox)
 
 > Google Chrome extension for Pinboard.in (https://pinboard.in).
 
@@ -38,4 +38,4 @@ $ npm run build
 
 ## License
 
-MIT &copy; [Richard Käll](http://richardkall.se)
+MIT &copy; [Richard Käll](http://richardkall.se), José María Martín Luque
