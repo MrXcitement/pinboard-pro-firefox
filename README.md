@@ -1,6 +1,6 @@
 # Pinboard Pro [![Build Status](https://travis-ci.org/jmml97/pinboard-pro-firefox.svg?branch=master)](https://travis-ci.org/jmml97/pinboard-pro-firefox)
 
-> Google Chrome extension for Pinboard.in (https://pinboard.in).
+> Firefox extension for [Pinboard](https://pinboard.in).
 
 ![Pinboard Pro](preview.jpg)
 
@@ -20,7 +20,7 @@ The "Save bookmark"-dialog uses the official popup which means you have access t
 
 ## Install
 
-Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/pinboard-pro/pmgaobiflaffpllgnepmhcnbdhfgnpna).
+Install from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/pinboard-pro/).
 
 ## Development
 
