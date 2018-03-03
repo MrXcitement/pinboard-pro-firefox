@@ -8,14 +8,14 @@
   "commands": {
     "save": {
       "suggested_key": {
-        "default": "Ctrl+Shift+S",
+        "default": "Alt+P",
         "mac": "MacCtrl+Shift+S"
       },
       "description": "Save bookmark"
     },
     "read_later": {
       "suggested_key": {
-        "default": "Ctrl+Shift+L",
+        "default": "Alt+R",
         "mac": "MacCtrl+Shift+L"
       },
       "description": "Read later"
